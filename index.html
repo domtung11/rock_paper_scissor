@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function computerPlay() {
+            let ans = ['Rock', 'Paper', 'Scissors'];
+            random = Math.floor(Math.random() * 2);
+            return ans[random];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
+                return "Tie! Try again!";
+            } 
+
+            switch (playerSelection.toLowerCase() !== computerSelection.toLowerCase()) {
+                case playerSelection.toLowerCase() == 'rock' &&  computerSelection.toLowerCase() == 'paper':
+                    return "You lose! Paper beats Rock!";
+                    break;
+                case playerSelection.toLowerCase() == 'rock' &&  computerSelection.toLowerCase() == 'scissors':
+                    return "You win! Rock beats scissors!";
+                    break;
+                case playerSelection.toLowerCase() == 'paper' &&  computerSelection.toLowerCase() == 'rock':
+                    return "You win! Paper beats Rock!";
+                    break;
+                case playerSelection.toLowerCase() == 'paper' &&  computerSelection.toLowerCase() == 'scissors':
+                    return "You lose! Scissors beat paper!";
+                    break;
+                case playerSelection.toLowerCase() == 'scissors' &&  computerSelection.toLowerCase() == 'rock':
+                    return "YOu lose! Rock beats scissors!";
+                    break;
+                case playerSelection.toLowerCase() == 'scissors' &&  computerSelection.toLowerCase() == 'paper':
+                    return "You win! Scissors beat paper!";
+                    break;
+
+            }
+        }
+        function game() {
+            for (i = 1; i <= 5; i++) {
+                playerSelection = prompt("Rock, paper or scissors?");
+                console.log(playRound(playerSelection, computerPlay()));
+                
+            }
+        }
+        game();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
